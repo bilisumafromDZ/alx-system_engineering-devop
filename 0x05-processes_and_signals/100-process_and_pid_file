@@ -1,25 +1,29 @@
 #!/usr/bin/env bash
+#This script creates an infinite loop and handls SIGTERM, SIGINT and SIGQUIT
 
-PRID=$$
-echo "$PRID" > /var/run/holbertonscript.pid
-
-function Do_not_love_at_Signal()
-{
-    echo "Y U no love me?!"
+sig_term() {
+	rm -f /var/run/holbertonscript.pid
+	echo "I hate the kill command"
+	exit 0
 }
 
-function Quit_at_Signal()
-{
-    echo "I hate the kill command"
-    rm -f /var/run/holbertonscript.pid
-    kill -9 $PRID
+sig_quit() {
+	rm -f /var/run/holbertonscript.pid
+	exit 0
 }
 
-trap Do_not_love_at_Signal SIGINT
-trap Quit_at_Signal SIGQUIT SIGTERM
+sig_int() {
+	echo "Y U no love me?!"
+	exit 0
+}
 
-while :
-do
-    echo "To infinity and beyond"
-    sleep 2
+
+trap sig_term TERM
+trap sig_quit QUIT
+trap sig_int INT
+
+$$ > /var/run/holbertonscript.pid
+
+while (true); do
+	echo "To infinity and beyond"
 done
