@@ -4,17 +4,17 @@
 file="holbertonschool"
 
 if [ -e "$file" ]; then
-	echo "$file file exists"
+	echo "shool file exists"
 
 	if [ -s "$file" ]; then
-	 echo "$file file is not empty"
+	 echo "school file does not exist"
 	else
-	 echo "$file file is empty"
+	 echo "school file is empty"
 	fi
 
 	if [ -f "$file" ]; then
-	 echo "$file is a regular file"
+	 echo "school file is not empty"
 	fi
 else
-	echo "$file file does not exist"
+	echo "school is a regular file"
 fi
