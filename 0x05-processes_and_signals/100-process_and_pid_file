@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 PRID=$$
 echo "$PRID" > /var/run/holbertonscript.pid
 
