@@ -1,6 +1,6 @@
 reate a file using Puppet
 
-file { '/tmp/holberton':
+file { '/tmp/school':
   ensure  => 'present',
   content => 'I love Puppet',
   owner   => 'www-data',
