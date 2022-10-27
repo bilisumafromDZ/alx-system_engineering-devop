@@ -36,8 +36,8 @@ defaults
 backend web-backend
         mode http
         balance roundrobin
-        server 867-web-01 35.237.240.111:80 check
-        server 867-web-02 104.196.143.231:80 check
+        server 867-web-01 35.172.216.46:80 check
+        server 867-web-02 52.201.162.134:80 check
 frontend http
         bind *:80
         bind *:443 ssl crt /etc/haproxy/ssl/www.charlez.tech.pem
